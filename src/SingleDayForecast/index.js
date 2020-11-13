@@ -5,7 +5,7 @@ const SingleDayForecast = (props) => {
 		<div className="singleDay">
 			<img 
 				className="weatherIcon" 
-				src={"http://openweathermap.org/img/wn/" + props.weatherIcon + ".png"} 
+				src={`http://openweathermap.org/img/wn/${props.weatherIcon}.png`} 
 				alt={props.weather} 
 				width="45"
 			/>
