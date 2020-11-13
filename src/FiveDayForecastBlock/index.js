@@ -30,7 +30,7 @@ const FiveDayForecastBlock = (props) => {
     };
 
     getWeather();
-  }, []);
+  }, [props.cityName]);
 
   if (!dayOneForecast.main || !dayTwoForecast.main || !dayThreeForecast.main || !dayFourForecast.main || !dayFiveForecast.main) { 
     return null; 
