@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
 
 const CityAndStateFields = (props) => {
-	const [cityName, setCityName] = useState('Dover');
+	const [cityName, setCityName] = useState('Dover, Delaware');
 	var userInputCityName;
 
 	return (
@@ -11,7 +11,7 @@ const CityAndStateFields = (props) => {
 				<input
 					className="cityField" 
 					type="text" 
-					placeholder="Search by City" 
+					placeholder="Search by City, State" 
 					onChange={(event) => {
 						userInputCityName = event.target.value
 					}} 
