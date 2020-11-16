@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from "react";
-import SingleDayForecast from "../SingleDayForecast";
+import SingleDayForecastBlock from "../SingleDayForecastBlock";
+import DayOneDetails from "../DayOneDetails";
+import DayTwoDetails from "../DayTwoDetails";
+import DayThreeDetails from "../DayThreeDetails";
+import DayFourDetails from "../DayFourDetails";
+import DayFiveDetails from "../DayFiveDetails";
+import { Router } from "@reach/router";
 
 const apiKey = "";
 
 const FiveDayForecastBlock = (props) => {
+  const [fiveDayForecast, setFiveDayForecast] = useState([]);
 	const [dayOneForecast, setDayOneForecast] = useState([]);
 	const [dayTwoForecast, setDayTwoForecast] = useState([]);
 	const [dayThreeForecast, setDayThreeForecast] = useState([]);
@@ -20,6 +27,7 @@ const FiveDayForecastBlock = (props) => {
       const dayFourForecast = fiveDayForecast.list[24];
       const dayFiveForecast = fiveDayForecast.list[32];
       
+      setFiveDayForecast(fiveDayForecast);
       setDayOneForecast(dayOneForecast);
       setDayTwoForecast(dayTwoForecast);
       setDayThreeForecast(dayThreeForecast);
@@ -39,37 +47,49 @@ const FiveDayForecastBlock = (props) => {
   return (
     <div className="fiveDayForecastWrapper">
       <div className="fiveDayForecast">
-        <SingleDayForecast 
+        <SingleDayForecastBlock 
           temperature={dayOneForecast.main.temp} 
           weather={dayOneForecast.weather[0].main} 
           date={dayOneForecast.dt_txt}
           weatherIcon={dayOneForecast.weather[0].icon} 
+          detailsLinkSlug={"DayOneDetails"}
         />
-        <SingleDayForecast 
+        <SingleDayForecastBlock 
           temperature={dayTwoForecast.main.temp} 
           weather={dayTwoForecast.weather[0].main} 
           date={dayTwoForecast.dt_txt}
           weatherIcon={dayTwoForecast.weather[0].icon} 
+          detailsLinkSlug={"DayTwoDetails"}
         />
-        <SingleDayForecast 
+        <SingleDayForecastBlock 
           temperature={dayThreeForecast.main.temp} 
           weather={dayThreeForecast.weather[0].main} 
           date={dayThreeForecast.dt_txt}
           weatherIcon={dayThreeForecast.weather[0].icon} 
+          detailsLinkSlug={"DayThreeDetails"}
         />
-        <SingleDayForecast 
+        <SingleDayForecastBlock 
           temperature={dayFourForecast.main.temp} 
           weather={dayFourForecast.weather[0].main} 
           date={dayFourForecast.dt_txt}
           weatherIcon={dayFourForecast.weather[0].icon} 
+          detailsLinkSlug={"DayFourDetails"}
         />
-        <SingleDayForecast 
+        <SingleDayForecastBlock 
           temperature={dayFiveForecast.main.temp} 
           weather={dayFiveForecast.weather[0].main} 
           date={dayFiveForecast.dt_txt}
           weatherIcon={dayFiveForecast.weather[0].icon} 
+          detailsLinkSlug={"DayFiveDetails"}
         />
       </div>
+      <Router>
+        <DayOneDetails path="/DayOneDetails" fiveDayForecast={fiveDayForecast} />
+        <DayTwoDetails path="/DayTwoDetails" fiveDayForecast={fiveDayForecast} />
+        <DayThreeDetails path="/DayThreeDetails" fiveDayForecast={fiveDayForecast} />
+        <DayFourDetails path="/DayFourDetails" fiveDayForecast={fiveDayForecast} />
+        <DayFiveDetails path="/DayFiveDetails" fiveDayForecast={fiveDayForecast} />
+      </Router>
     </div>
 	);
 }

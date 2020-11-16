@@ -1,3 +1,5 @@
+/* "App.js" */
+
 .App {
   text-align: center;
 }
@@ -7,11 +9,18 @@
   margin: 0;
 }
 
+/* "FiveDayForecastBlock" */
+
 .fiveDayForecast {
     display: flex;
 }
 
-.fiveDayForecast > .singleDay {
+.fiveDayForecast a {
+    flex: 1;
+    text-decoration: none;
+}
+
+.fiveDayForecast > a .singleDay {
   text-align: center;
   background-color: white;
   color: #586f84;
@@ -38,6 +47,22 @@
   margin-bottom: .5rem;
 }
 
+/* Day Detail Components (i.e. "DayOneDetails") */
 
+.detailContainers {
+  margin-top: 1.5em;
+}
 
+.detailsWrapper {
+  display: flex;
+}
+
+.threeHourUpdatesBlock {
+  flex: 1;
+}
+
+.timeZoneBlock {
+  flex: 1;
+  margin-top: 1.5em;
+}
 
