@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
+import { Link } from "@reach/router";
 
 const CityAndStateFields = (props) => {
 	const [cityName, setCityName] = useState('Dover, Delaware');
-	var userInputCityName;
+	var [userInputCityName, setUserInputCityName] = useState('')
 
 	return (
 		<div>

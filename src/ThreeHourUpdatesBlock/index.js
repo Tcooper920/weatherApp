@@ -16,10 +16,8 @@ const ThreeHourUpdatesBlock = (props) => {
 									width="30"
 								/>
 								<h3>{time}</h3>
-								{thisDate}
-								<p><strong>Temperature:</strong> {threeHourForecast.main.temp}&#8457;
-								<strong> Min:</strong> {threeHourForecast.main.temp_min}&#8457;
-								<strong> Max:</strong> {threeHourForecast.main.temp_max}&#8457;<br />
+								<p>{thisDate}<br />
+								<strong>Temperature:</strong> {threeHourForecast.main.temp}&#8457;<br />
 								<strong>Humidity:</strong> {threeHourForecast.main.humidity}%<br />
 								<strong>Wind Speed:</strong> {threeHourForecast.wind.speed}mph<br />
 								<strong>Weather:</strong> {threeHourForecast.weather[0].description}<br />
