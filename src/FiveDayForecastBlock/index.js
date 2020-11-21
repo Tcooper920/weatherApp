@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from "react";
 import SingleDayForecastBlock from "../SingleDayForecastBlock";
-import DayOneDetails from "../DayOneDetails";
-import DayTwoDetails from "../DayTwoDetails";
-import DayThreeDetails from "../DayThreeDetails";
-import DayFourDetails from "../DayFourDetails";
-import DayFiveDetails from "../DayFiveDetails";
+import DayDetailsBlock from "../DayDetailsBlock";
 import { Router } from "@reach/router";
 
 const apiKey = "";
@@ -34,7 +30,7 @@ const FiveDayForecastBlock = (props) => {
       setDayFourForecast(dayFourForecast);
       setDayFiveForecast(dayFiveForecast);
 
-      console.log(fiveDayForecast); // Get all weather
+      // console.log(fiveDayForecast); // Get all weather
     };
 
     getWeather();
@@ -84,11 +80,11 @@ const FiveDayForecastBlock = (props) => {
         />
       </div>
       <Router>
-        <DayOneDetails path="/DayOneDetails" fiveDayForecast={fiveDayForecast} />
-        <DayTwoDetails path="/DayTwoDetails" fiveDayForecast={fiveDayForecast} />
-        <DayThreeDetails path="/DayThreeDetails" fiveDayForecast={fiveDayForecast} />
-        <DayFourDetails path="/DayFourDetails" fiveDayForecast={fiveDayForecast} />
-        <DayFiveDetails path="/DayFiveDetails" fiveDayForecast={fiveDayForecast} />
+        <DayDetailsBlock path="/DayOneDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={0} />
+        <DayDetailsBlock path="/DayTwoDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={8} />
+        <DayDetailsBlock path="/DayThreeDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={16} />
+        <DayDetailsBlock path="/DayFourDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={24} />
+        <DayDetailsBlock path="/DayFiveDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={32} />
       </Router>
     </div>
 	);
