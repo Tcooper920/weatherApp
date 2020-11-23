@@ -10,21 +10,20 @@ const CityAndStateFields = (props) => {
 		<div>
 			<form>
 				<input
-					className="cityField" 
+					className="cityField button" 
 					type="text" 
 					placeholder="Search by City, State" 
 					onChange={(event) => {
 						userInputCityName = event.target.value
 					}} 
 				/>
-				<button 
+				<input 
+					type="button"
+					value="Get Weather"
 					onClick={(event) => {
-						event.preventDefault();
 						setCityName(userInputCityName);
 					}}
-				>
-				Get Weather
-				</button>
+				/>
 			</form>
 			<h2>Weather for {cityName}:</h2>
 			<FiveDayForecastBlock cityName={cityName} /> 
