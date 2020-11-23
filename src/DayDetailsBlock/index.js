@@ -24,7 +24,11 @@ const DayDetailsBlock = (props) => {
 				})
 			}
 			<ThreeHourUpdatesBlock eightThreeHourForecastsForThisDay={eightThreeHourForecastsForThisDay} />
-			<TimeZoneBlock cityTimezoneDetails={cityTimezoneDetails} eightThreeHourForecastsForThisDay={eightThreeHourForecastsForThisDay} />
+			<TimeZoneBlock 
+				cityTimezoneDetails={cityTimezoneDetails} 
+				eightThreeHourForecastsForThisDay={eightThreeHourForecastsForThisDay} 
+				dateForThisDay={dateForThisDay}
+			/>
 			</div>
 		</div>
 	)

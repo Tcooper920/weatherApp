@@ -30,7 +30,7 @@ const FiveDayForecastBlock = (props) => {
       setDayFourForecast(dayFourForecast);
       setDayFiveForecast(dayFiveForecast);
 
-      // console.log(fiveDayForecast); // Get all weather
+      console.log(fiveDayForecast); // Get all weather
     };
 
     getWeather();
