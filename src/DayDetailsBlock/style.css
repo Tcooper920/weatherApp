@@ -1,0 +1,15 @@
+.detailsWrapper {
+  display: flex;
+  background-color: #eaeff3;
+  margin-top: .5rem;
+}
+
+.threeHourUpdatesHeader {
+	margin-left: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+	.detailsWrapper {
+		flex-direction: column;
+	}
+}

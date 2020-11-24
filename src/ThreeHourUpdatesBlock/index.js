@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./style.css"; 
 
 const ThreeHourUpdatesBlock = (props) => {
 	return (
@@ -9,14 +10,18 @@ const ThreeHourUpdatesBlock = (props) => {
 						let thisDate = threeHourForecast.dt_txt.split(" ").reverse().pop(); // Only show the date (not the time)
 
 						return (
-							<div className="detailContainers" key={index}>
-								<img className="weatherIcon"
-									src={`http://openweathermap.org/img/wn/${threeHourForecast.weather[0].icon}.png`} 
-									alt={threeHourForecast.weather[0].main}
-									width="30"
-								/>
-								<h3>{time}</h3>
-								<p>{thisDate}<br />
+							<div className="threeHourUpdate" key={index}>
+								<div className="iconDateTimeContainer">
+									<img className="weatherIcon"
+										src={`http://openweathermap.org/img/wn/${threeHourForecast.weather[0].icon}.png`} 
+										alt={threeHourForecast.weather[0].main}
+										width="30"
+										height="30"
+									/>
+									<h3>{time}<br />{thisDate}</h3>
+								</div>
+								<hr />
+								<p>
 								<strong>Temperature:</strong> {threeHourForecast.main.temp}&#8457;<br />
 								<strong>Humidity:</strong> {threeHourForecast.main.humidity}%<br />
 								<strong>Wind Speed:</strong> {threeHourForecast.wind.speed}mph<br />

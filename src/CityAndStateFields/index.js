@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./style.css";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
 import { Link } from "@reach/router";
 
@@ -10,7 +11,7 @@ const CityAndStateFields = (props) => {
 		<div>
 			<form>
 				<input
-					className="cityField button" 
+					className="cityField" 
 					type="text" 
 					placeholder="Search by City, State" 
 					onChange={(event) => {
@@ -18,6 +19,7 @@ const CityAndStateFields = (props) => {
 					}} 
 				/>
 				<input 
+					className="button"
 					type="button"
 					value="Get Weather"
 					onClick={(event) => {
@@ -25,7 +27,8 @@ const CityAndStateFields = (props) => {
 					}}
 				/>
 			</form>
-			<h2>Weather for {cityName}:</h2>
+			<h2 className="weatherForHeader">Weather for {cityName}:</h2>
+			<p><em className="subtext">(Select a day below)</em></p>
 			<FiveDayForecastBlock cityName={cityName} /> 
 		</div>
 	)
