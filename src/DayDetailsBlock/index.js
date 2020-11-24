@@ -1,4 +1,5 @@
 import React, {useState, setState} from "react";
+import "./style.css";
 import ThreeHourUpdatesBlock from "../ThreeHourUpdatesBlock";
 import TimeZoneBlock from "../TimeZoneBlock";
 
@@ -9,7 +10,7 @@ const DayDetailsBlock = (props) => {
 
 	return (
 		<div>
-			<h2>3 Hour Updates:</h2>
+			<h2 className="threeHourUpdatesHeader">3 Hour Updates for {dateForThisDay}:</h2>
 			<div className="detailsWrapper">
 			{	
 				// Filter weather details by date for each of the 5 days

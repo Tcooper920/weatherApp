@@ -1,8 +1,9 @@
 import React, {useState} from "react";
+import "./style.css";
 import Graph from "../Graph";
 
-/* Loop through array for this day and create two new arrays with the temperatures (or other properties) and times. 
-Then, use these values for the x and y axis in the Plotly CDN 
+/* Loop through array for this day and create new arrays with the temperatures (or other properties) and times. 
+Then, use these values for the x and y axis in the Plotly CDN. 
 (https://plotly.com/javascript/getting-started/) */
 
 const TimeZoneBlock = (props) => {
@@ -29,6 +30,7 @@ const TimeZoneBlock = (props) => {
 			<p><strong>Timezone: </strong>{props.cityTimezoneDetails.timezone}<br />
 			<strong>{props.cityTimezoneDetails.name} Sunrise: </strong>{props.cityTimezoneDetails.sunrise} <br />
 			<strong>{props.cityTimezoneDetails.name} Sunset: </strong>{props.cityTimezoneDetails.sunset}</p>
+			<hr />
 			<Graph 
 				dateForThisDay={props.dateForThisDay}
 				timeStampsArray={timeStampsArray} 

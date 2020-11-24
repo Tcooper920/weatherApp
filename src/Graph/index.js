@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./style.css";
 import Plot from 'react-plotly.js';
 
 const Graph = (props) => {
@@ -19,30 +20,32 @@ const Graph = (props) => {
 
 	return (
 		<div className="graphWrapper">
-			<input type="button" value="Temperature" className="button"
-				onClick={() => {
-					setYAxisTitle('Temperature (&#8457;)');
-					setUnits('&#8457;');
-					setYAxisData(props.temperaturesArray);
-					setGraphColor('#c0daef')
-				}}
-			/>
-			<input type="button" value="Humidity" className="button"
-				onClick={() => {
-					setYAxisTitle('Humidity (%)');
-					setUnits('%');
-					setYAxisData(props.humidityArray);
-					setGraphColor('#ffa88c')
-				}}
-			/>
-			<input type="button" value="Wind Speed" className="button"
-				onClick={() => {
-					setYAxisTitle('Wind Speed (mph)');
-					setUnits('mph');
-					setYAxisData(props.windSpeedArray);
-					setGraphColor('#d3dfe4')
-				}}
-			/>
+			<form>
+				<input type="button" value="Temperature" className="button"
+					onClick={() => {
+						setYAxisTitle('Temperature (&#8457;)');
+						setUnits('&#8457;');
+						setYAxisData(props.temperaturesArray);
+						setGraphColor('#c0daef')
+					}}
+				/>
+				<input type="button" value="Humidity" className="button"
+					onClick={() => {
+						setYAxisTitle('Humidity (%)');
+						setUnits('%');
+						setYAxisData(props.humidityArray);
+						setGraphColor('#ffa88c')
+					}}
+				/>
+				<input type="button" value="Wind Speed" className="button"
+					onClick={() => {
+						setYAxisTitle('Wind Speed (mph)');
+						setUnits('mph');
+						setYAxisData(props.windSpeedArray);
+						setGraphColor('#d3dfe4')
+					}}
+				/>
+			</form>
 			<Plot 
 				key={props.temperaturesArray}
 				className="graph"
@@ -58,13 +61,14 @@ const Graph = (props) => {
 				]}
 				layout={ 
 					{
-						width: 700, 
-						height: 700, 
 						title: `3 Hour Updates for ${props.dateForThisDay}`, 
 						xaxis: {title: 'Time'},
 						yaxis: {title: yAxisTitle},
+						useResizeHandler: true,
+						autosize: true,
 					}
 				}
+				useResizeHandler={true}
 			/>
 		</div>
 	)

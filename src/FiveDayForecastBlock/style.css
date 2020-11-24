@@ -1,0 +1,13 @@
+.fiveDayForecast {
+    display: flex;
+    flex-flow: wrap;
+	background-color: #496277;
+	padding: .5rem;
+	margin: .5rem 0 2rem 0;
+}
+
+@media screen and (max-width: 740px) {
+	.fiveDayForecast {
+		flex-direction: column;
+	}
+}

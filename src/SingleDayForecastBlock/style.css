@@ -1,0 +1,44 @@
+a {
+    flex: 1;
+    text-decoration: none;
+    transition: opacity .5s, transform .5s;
+}
+
+a:hover {
+  opacity: .7;
+  transform: scale(1.03, 1.03);
+}
+
+a .singleDay {
+  text-align: center;
+  background-color: white;
+  padding: 1rem;
+  margin: .5rem;
+  border-radius: 5px;
+  border-bottom: 5px solid #a0bfd8;
+}
+
+.singleDay > span {
+  display: block;
+}
+
+.temperature {
+  font-size: 1.5rem;
+}
+
+.weatherIcon {
+  background-color: #a0bfd8;
+  border-radius: 100px;
+  margin-bottom: .5rem;
+}
+
+@media screen and (max-width: 740px) {
+  a .singleDay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .temperature {
+    font-size: 1rem;
+  }
+}

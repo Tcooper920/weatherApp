@@ -1,0 +1,9 @@
+.timeZoneBlock {
+	flex: 1;
+	margin: 1rem;
+	padding: 1rem;
+	background-color: white;
+	box-shadow: 0px 0px 5px 1px #d9e3ea;
+	border-radius: 5px;
+	overflow: hidden; /* this "hack" forces the Plotly svg graph to remain responsive as the window width scales down. Otherwise, it would only scale up unless the page is reloaded. */
+}

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./style.css";
 import SingleDayForecastBlock from "../SingleDayForecastBlock";
 import DayDetailsBlock from "../DayDetailsBlock";
 import { Router } from "@reach/router";
