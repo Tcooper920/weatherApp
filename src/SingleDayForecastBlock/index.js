@@ -1,12 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 import { Link } from "@reach/router";
 
 const SingleDayForecastBlock = (props) => {
-	let thisDate = props.date.split(" ").reverse().pop(); // Timestamp not needed here – only date
+	let thisDate = props.date.split(" ").reverse().pop(); // Timestamp not needed here – only show date
 
 	return (
-		<Link to={`/${props.detailsLinkSlug}`}>
+		<Link 
+			to={`/${props.detailsLinkSlug}`} 
+			// Reach Router's method for highlighting an active link...
+			getProps={({ isCurrent }) => {
+      			return {
+       				style: {
+          			opacity: isCurrent ? ".65" : "1"
+        		}
+    		}
+    	}}
+		>
 			<div className="singleDay">
 				<img 
 					className="weatherIcon" 

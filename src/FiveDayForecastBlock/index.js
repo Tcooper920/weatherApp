@@ -3,6 +3,7 @@ import "./style.css";
 import SingleDayForecastBlock from "../SingleDayForecastBlock";
 import DayDetailsBlock from "../DayDetailsBlock";
 import { Router } from "@reach/router";
+import ReactDOM from 'react-dom';
 
 const apiKey = "";
 
