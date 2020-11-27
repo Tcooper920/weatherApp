@@ -20,7 +20,7 @@ const Graph = (props) => {
 
 	return (
 		<div className="graphWrapper">
-			<form>
+			<form className="graphButtonsWrapper">
 				<input type="button" value="Temperature" className="button"
 					onClick={() => {
 						setYAxisTitle('Temperature (&#8457;)');
