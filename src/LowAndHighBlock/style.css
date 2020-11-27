@@ -1,0 +1,25 @@
+.minAndMaxWrapper {
+	font-size: 2rem;
+	display: flex;
+	text-align: center;
+}
+
+.minContainer, .maxContainer {
+	flex: 1;
+}
+
+.divider {
+	color: #d2d2d2;
+}
+
+@media screen and (max-width: 1050px) {
+	.minAndMaxWrapper {
+		flex-direction: column;
+	}
+	.divider {
+		display: none;
+	}
+	.minContainer, .maxContainer {
+		margin-bottom: .5rem;
+	}
+}
