@@ -1,3 +1,39 @@
+.getWeatherForm {
+	display: flex;
+	max-width: 30rem;
+	margin: 1rem;
+}
+
+.getWeatherForm > * {
+	flex: 1;
+}
+
+.button.getWeather {
+	height: 2.5rem;
+	max-width: 10rem;
+	margin: 0 0 0 .5rem;
+}
+
+.cityField {
+	font-size: .9rem;
+	height: 2.5rem;
+	padding: 0 1rem 0 1rem;
+	border: none;
+	background-color: #e7ebec;
+	border-radius: 5px;
+}
+
 .weatherForHeader, .subtext {
 	margin-left: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+	.getWeatherForm {
+		flex-direction: column;
+	}
+	.button.getWeather {
+		margin: 1rem 0 1rem 0;
+		max-width: 100%;
+		font-weight: bold;
+	}
 }

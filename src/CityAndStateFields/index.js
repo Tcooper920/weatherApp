@@ -1,25 +1,24 @@
 import React, {useState} from "react";
 import "./style.css";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
-import { Link } from "@reach/router";
 
 const CityAndStateFields = (props) => {
 	const [cityName, setCityName] = useState('Dover, Delaware');
-	var [userInputCityName, setUserInputCityName] = useState('')
+	var [userInputCityName, setUserInputCityName] = useState('');
 
 	return (
 		<div>
-			<form>
+			<form className="getWeatherForm">
 				<input
 					className="cityField" 
 					type="text" 
-					placeholder="Search by City, State" 
+					placeholder="City, State" 
 					onChange={(event) => {
 						userInputCityName = event.target.value
 					}} 
 				/>
 				<input 
-					className="button"
+					className="button getWeather"
 					type="button"
 					value="Get Weather"
 					onClick={(event) => {
