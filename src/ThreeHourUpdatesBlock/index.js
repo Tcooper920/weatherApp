@@ -8,6 +8,7 @@ const ThreeHourUpdatesBlock = (props) => {
 					props.eightThreeHourForecastsForThisDay.map((threeHourForecast, index) => {
 						let time = threeHourForecast.dt_txt.split(" ").pop(); // Only show the time (not the date)
 						let thisDate = threeHourForecast.dt_txt.split(" ").reverse().pop(); // Only show the date (not the time)
+						let thisChanceOfPrecipitation = Math.round((threeHourForecast.pop * 100) * 10) / 10;
 
 						return (
 							<div className="threeHourUpdate" key={index}>
@@ -26,6 +27,7 @@ const ThreeHourUpdatesBlock = (props) => {
 								<strong>Humidity:</strong> {threeHourForecast.main.humidity}%<br />
 								<strong>Wind Speed:</strong> {threeHourForecast.wind.speed}mph<br />
 								<strong>Weather:</strong> {threeHourForecast.weather[0].description}<br />
+								<strong>Chance of Precipitation:</strong> {thisChanceOfPrecipitation}%<br />
 								</p>	
 							</div>
 						)

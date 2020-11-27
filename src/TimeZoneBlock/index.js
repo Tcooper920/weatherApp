@@ -11,18 +11,21 @@ const TimeZoneBlock = (props) => {
     let [temperaturesArray, setTemperatures] = useState([]); // Array of temperatures
     let [humidityArray, setHumidity] = useState([]); // Array of humidity
     let [windSpeedArray, setWindSpeedArray] = useState([]); // Array of wind speeds
+    let [chanceOfPrecipitationArray, setChanceOfPrecipitationArray] = useState([]); // Array of precipitation
 
     // Clear previous day's values
     timeStampsArray = [];
     temperaturesArray = [];
     humidityArray = [];
     windSpeedArray = [];
+    chanceOfPrecipitationArray = [];
 		
 	props.eightThreeHourForecastsForThisDay.map((forecast) => {
         timeStampsArray.push(forecast.dt_txt.split(" ").pop().toString());
 		temperaturesArray.push(forecast.main.temp);
 		humidityArray.push(forecast.main.humidity);
 		windSpeedArray.push(forecast.wind.speed);
+		chanceOfPrecipitationArray.push(forecast.pop * 100);
 	});
 	
 	return (
@@ -37,6 +40,7 @@ const TimeZoneBlock = (props) => {
 				temperaturesArray={temperaturesArray} 
 				humidityArray={humidityArray} 
 				windSpeedArray={windSpeedArray} 
+				chanceOfPrecipitationArray={chanceOfPrecipitationArray}
 			/>
 		</div>
 	)
