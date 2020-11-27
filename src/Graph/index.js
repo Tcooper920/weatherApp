@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./style.css";
-import Plot from 'react-plotly.js';
+import Plot from "react-plotly.js";
+import LowAndHighBlock from "../LowAndHighBlock";
 
 const Graph = (props) => {
 	let [yAxisTitle, setYAxisTitle] = useState('Temperature (&#8457;)')
@@ -78,6 +79,8 @@ const Graph = (props) => {
 				}
 				useResizeHandler={true}
 			/>
+			<hr />
+			<LowAndHighBlock yAxisData={yAxisData} units={units}/>
 		</div>
 	)
 }
