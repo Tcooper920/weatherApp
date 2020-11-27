@@ -2,6 +2,12 @@ import React, {useState} from "react";
 import "./style.css"; 
 
 const ThreeHourUpdatesBlock = (props) => {
+	const [dropdownIsActive, setDropdownActive] = useState(false);
+
+	const toggleClass = () => {
+    	setDropdownActive(!dropdownIsActive);
+ 	};
+
 	return (
 		<div className="threeHourUpdatesBlock">
 				{
@@ -23,11 +29,16 @@ const ThreeHourUpdatesBlock = (props) => {
 								</div>
 								<hr />
 								<p>
+								<strong>Weather:</strong> {threeHourForecast.weather[0].description}<br />
 								<strong>Temperature:</strong> {threeHourForecast.main.temp}&#8457;<br />
 								<strong>Humidity:</strong> {threeHourForecast.main.humidity}%<br />
 								<strong>Wind Speed:</strong> {threeHourForecast.wind.speed}mph<br />
-								<strong>Weather:</strong> {threeHourForecast.weather[0].description}<br />
 								<strong>Chance of Precipitation:</strong> {thisChanceOfPrecipitation}%<br />
+								<input type="button" className="expandDetailsLink" onClick={toggleClass} value="Expand Details..." />
+								<span className={`expandedForecastBlockContent ${dropdownIsActive ? 'expandForecastBlock': null}`}>
+									<strong>Cloudiness:</strong> {threeHourForecast.clouds.all}%<br />
+									<strong>Average Visibility:</strong> {threeHourForecast.visibility}m<br />
+								</span>
 								</p>	
 							</div>
 						)
