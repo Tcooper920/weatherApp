@@ -27,7 +27,7 @@ const Graph = (props) => {
 						setYAxisTitle('Temperature (&#8457;)');
 						setUnits('&#8457;');
 						setYAxisData(props.temperaturesArray);
-						setGraphColor('#c0daef')
+						setGraphColor('#c0daef');
 					}}
 				/>
 				<input type="button" value="Chance of Precipitation" className="button"
@@ -35,7 +35,7 @@ const Graph = (props) => {
 						setYAxisTitle('Chance of Precipitation (%)');
 						setUnits('%');
 						setYAxisData(props.chanceOfPrecipitationArray);
-						setGraphColor('#79c4ff')
+						setGraphColor('#79c4ff');
 					}}
 				/>
 				<input type="button" value="Humidity" className="button"
@@ -43,7 +43,7 @@ const Graph = (props) => {
 						setYAxisTitle('Humidity (%)');
 						setUnits('%');
 						setYAxisData(props.humidityArray);
-						setGraphColor('#ffa88c')
+						setGraphColor('#ffa88c');
 					}}
 				/>
 				<input type="button" value="Wind Speed" className="button"
@@ -51,7 +51,15 @@ const Graph = (props) => {
 						setYAxisTitle('Wind Speed (mph)');
 						setUnits('mph');
 						setYAxisData(props.windSpeedArray);
-						setGraphColor('#dadada')
+						setGraphColor('#dadada');
+					}}
+				/>
+				<input type="button" value="Cloudiness" className="button"
+					onClick={() => {
+						setYAxisTitle('Cloudiness (%)');
+						setUnits('%');
+						setYAxisData(props.cloudinessArray);
+						setGraphColor('#959ca2');
 					}}
 				/>
 			</form>
