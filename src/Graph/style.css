@@ -7,7 +7,7 @@
 	height: 40rem;
 }
 
-@media screen and (max-width:940px) {
+@media screen and (max-width: 1070px) {
 	form.graphButtonsWrapper {
 		display: flex;
     	flex-direction: column;
