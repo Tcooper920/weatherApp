@@ -5,7 +5,7 @@ import DayDetailsBlock from "../DayDetailsBlock";
 import { Router } from "@reach/router";
 import ReactDOM from 'react-dom';
 
-const apiKey = "";
+const apiKey = "37e67c76f4a6435aaa61c6f62e56c2f7";
 
 const FiveDayForecastBlock = (props) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
@@ -81,7 +81,7 @@ const FiveDayForecastBlock = (props) => {
           detailsLinkSlug={"DayFiveDetails"}
         />
       </div>
-      <Router>
+      <Router primary={false}>
         <DayDetailsBlock path="/DayOneDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={0} />
         <DayDetailsBlock path="/DayTwoDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={8} />
         <DayDetailsBlock path="/DayThreeDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={16} />

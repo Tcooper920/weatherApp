@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./style.css";
+import {useForm} from "react-hook-form";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
 
 const CityAndStateFields = (props) => {
@@ -8,8 +9,9 @@ const CityAndStateFields = (props) => {
 
 	return (
 		<div>
-			<form className="getWeatherForm">
+			<form className="getWeatherForm" onSubmit={(event) => {event.preventDefault();}}>
 				<input
+					name="cityAndStateInput"
 					className="cityField" 
 					type="text" 
 					placeholder="City, State" 
@@ -19,14 +21,14 @@ const CityAndStateFields = (props) => {
 				/>
 				<input 
 					className="button getWeather"
-					type="button"
+					type="submit"
 					value="Get Weather"
 					onClick={(event) => {
 						setCityName(userInputCityName);
 					}}
 				/>
 			</form>
-			<h2 className="weatherForHeader">Weather for {cityName}:</h2>
+			<h2 className="weatherForHeader">5 Day Forecast for {cityName}:</h2>
 			<p><em className="subtext">(Select a day below)</em></p>
 			<FiveDayForecastBlock cityName={cityName} /> 
 		</div>
