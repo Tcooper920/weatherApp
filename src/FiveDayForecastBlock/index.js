@@ -81,7 +81,7 @@ const FiveDayForecastBlock = (props) => {
           detailsLinkSlug={"DayFiveDetails"}
         />
       </div>
-      <Router>
+      <Router primary={false}>
         <DayDetailsBlock path="/DayOneDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={0} />
         <DayDetailsBlock path="/DayTwoDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={8} />
         <DayDetailsBlock path="/DayThreeDetails" fiveDayForecast={fiveDayForecast} startingDateIndex={16} />
