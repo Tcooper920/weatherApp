@@ -14,10 +14,20 @@ const FiveDayForecastBlock = (props) => {
 	const [dayThreeForecast, setDayThreeForecast] = useState([]);
 	const [dayFourForecast, setDayFourForecast] = useState([]);
 	const [dayFiveForecast, setDayFiveForecast] = useState([]);
+  var [showErrorMessage, setShowErrorMessage] = useState('hideErrorMessage');
 
 	useEffect(() => {
     const getWeather = async () => {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.cityName}&appid=${apiKey}&units=imperial`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.cityName}&appid=${apiKey}&units=imperial`);
+      
+      // Manually reject non-network errors (not submitting a form)
+      if (response.status >= 400 && response.status < 600) {
+        setShowErrorMessage('showErrorMessage');
+        return null;
+      } else {
+        setShowErrorMessage('hideErrorMessage');
+      }
+
       const fiveDayForecast = await response.json();
       const dayOneForecast = fiveDayForecast.list[0];
       const dayTwoForecast = fiveDayForecast.list[8];
@@ -31,8 +41,6 @@ const FiveDayForecastBlock = (props) => {
       setDayThreeForecast(dayThreeForecast);
       setDayFourForecast(dayFourForecast);
       setDayFiveForecast(dayFiveForecast);
-
-      console.log(fiveDayForecast); // Get all weather
     };
 
     getWeather();
@@ -44,6 +52,7 @@ const FiveDayForecastBlock = (props) => {
 
   return (
     <div className="fiveDayForecastWrapper">
+      <div className={showErrorMessage}>Please enter a location using this format: [ City, State ]</div>
       <div className="fiveDayForecast">
         <SingleDayForecastBlock 
           temperature={dayOneForecast.main.temp} 
