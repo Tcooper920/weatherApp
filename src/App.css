@@ -41,3 +41,29 @@ hr {
 .button:hover {
   background-color: #2184d2;
 }
+
+.showErrorMessage {
+  top: 0;
+  transition: top .5s;
+  font-size: .8rem;
+  position: fixed;
+  display: block;
+  width: 100%;
+  background-color: #f57474;
+  color: white;
+  padding: .5rem;
+  z-index: 999;
+}
+
+.hideErrorMessage {
+  top: -4rem;
+  transition: top .5s;
+  font-size: .8rem;
+  position: fixed;
+  display: block;
+  width: 100%;
+  background-color: #f57474;
+  color: white;
+  padding: .5rem;
+  z-index: 999;
+}

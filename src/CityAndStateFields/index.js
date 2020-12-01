@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./style.css";
-import {useForm} from "react-hook-form";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
 
 const CityAndStateFields = (props) => {
