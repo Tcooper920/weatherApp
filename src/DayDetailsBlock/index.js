@@ -1,4 +1,4 @@
-import React, {useState, setState} from "react";
+import React from "react";
 import "./style.css";
 import ThreeHourUpdatesBlock from "../ThreeHourUpdatesBlock";
 import TimeZoneBlock from "../TimeZoneBlock";

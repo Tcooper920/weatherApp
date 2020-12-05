@@ -5,8 +5,8 @@ const ThreeHourUpdatesBlock = (props) => {
 	const [dropdownIsActive, setDropdownActive] = useState(false);
 
 	const toggleClass = () => {
-    	setDropdownActive(!dropdownIsActive);
- 	};
+		setDropdownActive(!dropdownIsActive);
+	};
 
 	return (
 		<div className="threeHourUpdatesBlock">

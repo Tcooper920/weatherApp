@@ -4,11 +4,11 @@ import "./style.css";
 const LowAndHighBlock = (props) => {
 
 	const findMaxNumber = (array) => {
-		 return (Math.max.apply(Math, array));
+		return (Math.max.apply(Math, array));
 	}
 
 	const findMinNumber = (array) => {
-		 return (Math.min.apply(Math, array));
+		return (Math.min.apply(Math, array));
 	}
 
 	const decodeHTMLEntities = (text) => {
