@@ -1,15 +1,15 @@
 /* API: https://openweathermap.org/forecast5 */
 
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./App.css";
 import CityAndStateFields from "./CityAndStateFields";
 
 function App() {
 
 	return (
-   		<div>
-      		<CityAndStateFields />
-    	</div>
+		<div>
+			<CityAndStateFields />
+		</div>
 	);
 }
 

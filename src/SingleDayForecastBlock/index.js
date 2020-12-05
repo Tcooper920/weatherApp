@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./style.css";
 import { Link } from "@reach/router";
 
@@ -10,12 +10,12 @@ const SingleDayForecastBlock = (props) => {
 			to={`/${props.detailsLinkSlug}`} 
 			// Reach Router's method for highlighting an active link...
 			getProps={({ isCurrent }) => {
-      			return {
-       				style: {
-          			opacity: isCurrent ? ".65" : "1"
-        		}
-    		}
-    	}}
+				return {
+					style: {
+					opacity: isCurrent ? ".65" : "1"
+				}
+			}
+		}}
 		>
 			<div className="singleDay">
 				<img 

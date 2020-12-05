@@ -13,11 +13,11 @@ const Graph = (props) => {
 	// Set graph values to reflect new props if they change
 	useEffect(() => {
 		setYAxisTitle('Temperature (&#8457;)');
-    	setUnits('&#8457;');
-    	setYAxisData(props.temperaturesArray);
-    	setWindSpeedArray(props.windSpeedArray);
-    	setGraphColor('#c0daef')
-  	}, [props.temperaturesArray, props.windSpeedArray])
+		setUnits('&#8457;');
+		setYAxisData(props.temperaturesArray);
+		setWindSpeedArray(props.windSpeedArray);
+		setGraphColor('#c0daef')
+	}, [props.temperaturesArray, props.windSpeedArray])
 
 	return (
 		<div className="graphWrapper">
