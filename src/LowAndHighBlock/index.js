@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+/* Component used to identify the min and max in the current y-axis data */
+
 const LowAndHighBlock = (props) => {
 
 	const findMaxNumber = (array) => {
