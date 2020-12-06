@@ -20,7 +20,7 @@ const TimeZoneBlock = (props) => {
     chanceOfPrecipitationArray = [];
     cloudinessArray = [];
 		
-	/* Loop through the array for this day and create new arrays with the forecast properties (temp, humidity, etc.) and times. 
+	/* Loop through the array of 8 items for this day and create new arrays with the forecast properties (temp, humidity, etc.) and times. 
 	Then, use the property arrays for the x axis and the time for the y axis in the Plotly CDN. 
 	(https://plotly.com/javascript/getting-started/) */
 	props.eightThreeHourForecastsForThisDay.map((forecast) => {
