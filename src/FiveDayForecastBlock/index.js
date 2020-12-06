@@ -6,6 +6,9 @@ import { Router } from "@reach/router";
 
 const apiKey = "";
 
+/* Search for forecast by city/state ('props.cityName') */
+/* API returns the next 5 day forecast (returns an array of 40 items = 5 sets of 8 3hr forecasts) */
+
 const FiveDayForecastBlock = (props) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
 	const [dayOneForecast, setDayOneForecast] = useState([]);
@@ -19,7 +22,7 @@ const FiveDayForecastBlock = (props) => {
     const getWeather = async () => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.cityName}&appid=${apiKey}&units=imperial`);
       
-      // Manually reject non-network errors (not submitting a form)
+      // Manually reject non-network errors
       if (response.status >= 400 && response.status < 600) {
         setShowErrorMessage('showErrorMessage');
         return null;
@@ -28,6 +31,7 @@ const FiveDayForecastBlock = (props) => {
       }
 
       const fiveDayForecast = await response.json();
+      /* Initialize the first forecast timestamp shown for each of the five days in the list of 40 items */
       const dayOneForecast = fiveDayForecast.list[0];
       const dayTwoForecast = fiveDayForecast.list[8];
       const dayThreeForecast = fiveDayForecast.list[16];
@@ -49,6 +53,8 @@ const FiveDayForecastBlock = (props) => {
     return null; 
   }
 
+  /* Generate 5 day forecast blocks by passing props to SingleDayForecastBlock component 5 times */
+  /* A unique URL slug will be passed to each of the 5 day blocks for each day's unique link */
   return (
     <div className="fiveDayForecastWrapper">
       <div className={showErrorMessage}>Please enter a location using this format: [ City, State ]</div>

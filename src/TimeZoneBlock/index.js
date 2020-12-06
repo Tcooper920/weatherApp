@@ -2,9 +2,7 @@ import React, {useState} from "react";
 import "./style.css";
 import Graph from "../Graph";
 
-/* Loop through array for this day and create new arrays with the temperatures (or other properties) and times. 
-Then, use these values for the x and y axis in the Plotly CDN. 
-(https://plotly.com/javascript/getting-started/) */
+/* Component used to generate timezone info and pass props to the graph */
 
 const TimeZoneBlock = (props) => {
     let [timeStampsArray, setTimeStamps] = useState([]); // Array of timestamps
@@ -22,6 +20,9 @@ const TimeZoneBlock = (props) => {
     chanceOfPrecipitationArray = [];
     cloudinessArray = [];
 		
+	/* Loop through the array for this day and create new arrays with the forecast properties (temp, humidity, etc.) and times. 
+	Then, use the property arrays for the x axis and the time for the y axis in the Plotly CDN. 
+	(https://plotly.com/javascript/getting-started/) */
 	props.eightThreeHourForecastsForThisDay.map((forecast) => {
         timeStampsArray.push(forecast.dt_txt.split(" ").pop().toString());
 		temperaturesArray.push(forecast.main.temp);

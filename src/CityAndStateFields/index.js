@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import "./style.css";
 import FiveDayForecastBlock from "../FiveDayForecastBlock";
 
+/* City/State field and 'Get Weather' button */
+/* Pass cityName to FiveDayForecastBlock component to be handled by API */
+
 const CityAndStateFields = (props) => {
 	const [cityName, setCityName] = useState('Dover, Delaware');
 	var [userInputCityName, setUserInputCityName] = useState('');

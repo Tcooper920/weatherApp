@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import { Link } from "@reach/router";
 
+/* Component used to generate a block for 1 of the 5 days */
+
 const SingleDayForecastBlock = (props) => {
 	let thisDate = props.date.split(" ").reverse().pop(); // Timestamp not needed here – only show date
 

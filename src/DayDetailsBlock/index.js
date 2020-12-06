@@ -3,6 +3,8 @@ import "./style.css";
 import ThreeHourUpdatesBlock from "../ThreeHourUpdatesBlock";
 import TimeZoneBlock from "../TimeZoneBlock";
 
+/* Component used to generate the day details block on the left-hand side ('3 Hour Updates')*/
+
 const DayDetailsBlock = (props) => {
 	let eightThreeHourForecastsForThisDay = [];
 	const cityTimezoneDetails = props.fiveDayForecast.city;
@@ -18,12 +20,13 @@ const DayDetailsBlock = (props) => {
 					const thisDateToCompare = listItem.dt_txt.split(" ").reverse().pop();
 					
 					/* For each list item with a date that matches the date for this day, push the
-					list item into the array of forecasts */
+					list item into the array of forecasts. Then pass the array as a prop to the
+					ThreeHourUpdatesBlock component */
 					if (thisDateToCompare === dateForThisDay) {
 						eightThreeHourForecastsForThisDay.push(listItem)
 					}
 				})
-			}
+			} 
 			<ThreeHourUpdatesBlock eightThreeHourForecastsForThisDay={eightThreeHourForecastsForThisDay} />
 			<TimeZoneBlock 
 				cityTimezoneDetails={cityTimezoneDetails} 

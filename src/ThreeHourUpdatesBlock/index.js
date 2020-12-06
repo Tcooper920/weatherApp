@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import "./style.css"; 
 
+/* Component used to generate each 3 hour update block */
+
 const ThreeHourUpdatesBlock = (props) => {
+	/* Initialize the 'Expand Details...' toggle text */
 	const [dropdownIsActive, setDropdownActive] = useState(false);
 
 	const toggleClass = () => {

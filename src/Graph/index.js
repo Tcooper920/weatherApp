@@ -3,6 +3,9 @@ import "./style.css";
 import Plot from "react-plotly.js";
 import LowAndHighBlock from "../LowAndHighBlock";
 
+/* Component used to generate the graph */
+/* Pass the y-axis data to the LowAndHighBlock component */
+
 const Graph = (props) => {
 	let [yAxisTitle, setYAxisTitle] = useState('Temperature (&#8457;)')
 	let [units, setUnits] = useState('&#8457;')
