@@ -3,7 +3,7 @@ import "./style.css";
 import ThreeHourUpdatesBlock from "../ThreeHourUpdatesBlock";
 import TimeZoneBlock from "../TimeZoneBlock";
 
-/* Component used to generate the day details block on the left-hand side ('3 Hour Updates')*/
+/* Component used to generate the day details block (Both bottom blocks) */
 
 const DayDetailsBlock = (props) => {
 	let eightThreeHourForecastsForThisDay = [];
