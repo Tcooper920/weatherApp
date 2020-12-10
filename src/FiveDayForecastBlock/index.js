@@ -6,7 +6,7 @@ import { Router } from "@reach/router";
 
 const apiKey = "";
 
-/* Search for forecast by city/state ('props.cityName') */
+/* Search for forecast by city/state ('props.cityStateName') */
 /* API returns the next 5 day forecast (returns an array of 40 items = 5 sets of 8 3hr forecasts) */
 
 const FiveDayForecastBlock = (props) => {
@@ -20,7 +20,7 @@ const FiveDayForecastBlock = (props) => {
 
 	useEffect(() => {
     const getWeather = async () => {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.cityName}&appid=${apiKey}&units=imperial`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.cityStateName}&appid=${apiKey}&units=imperial`);
       
       // Manually reject non-network errors
       if (response.status >= 400 && response.status < 600) {
@@ -47,7 +47,7 @@ const FiveDayForecastBlock = (props) => {
     };
 
     getWeather();
-  }, [props.cityName]);
+  }, [props.cityStateName]);
 
   if (!dayOneForecast.main || !dayTwoForecast.main || !dayThreeForecast.main || !dayFourForecast.main || !dayFiveForecast.main) { 
     return null; 
