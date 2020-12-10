@@ -6,8 +6,8 @@ import FiveDayForecastBlock from "../FiveDayForecastBlock";
 /* Pass cityName to FiveDayForecastBlock component to be handled by API */
 
 const CityAndStateFields = (props) => {
-	const [cityName, setCityName] = useState('Dover, Delaware');
-	var [userInputCityName, setUserInputCityName] = useState('');
+	const [cityStateName, setCityStateName] = useState('Dover, Delaware');
+	var [userInputCityStateName, setUserInputCityStateName] = useState('');
 
 	return (
 		<div>
@@ -18,7 +18,7 @@ const CityAndStateFields = (props) => {
 					type="text" 
 					placeholder="City, State" 
 					onChange={(event) => {
-						userInputCityName = event.target.value
+						userInputCityStateName = event.target.value
 					}} 
 				/>
 				<input 
@@ -26,13 +26,13 @@ const CityAndStateFields = (props) => {
 					type="submit"
 					value="Get Weather"
 					onClick={(event) => {
-						setCityName(userInputCityName);
+						setCityStateName(userInputCityStateName);
 					}}
 				/>
 			</form>
-			<h2 className="weatherForHeader">5 Day Forecast for {cityName}:</h2>
+			<h2 className="weatherForHeader">5 Day Forecast for {cityStateName}:</h2>
 			<p><em className="subtext">(Select a day below)</em></p>
-			<FiveDayForecastBlock cityName={cityName} /> 
+			<FiveDayForecastBlock cityStateName={cityStateName} /> 
 		</div>
 	)
 }
