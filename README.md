@@ -1,6 +1,18 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+The app uses the OpenWeather API to fetch a 5 day forecast (https://openweathermap.org/forecast5). The information is broken down into sets of 3 hour forecasts for each of the 5 days. The Plotly library (https://plotly.com/javascript/react/) is used to graph the properties from each forecast – showing how the data changes over time.
+
+## Setup
+
+1.) Before running the project, you will need to generate an API key here: https://openweathermap.org/appid.
+
+2.) Navigate to weatherApp/src/FiveDayForecastBlock/index.js
+
+3.) Add your API key on line 7:
+
+### `const apiKey = "[Your API Key Here]";`
 
 ## Available Scripts
 
