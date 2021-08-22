@@ -1,4 +1,4 @@
-To view the full working project in your browser, click [here] (https://weatherapiapplication.netlify.app/).
+To view the full working project in your browser, click [here](https://weatherapiapplication.netlify.app/).
 
 # Getting Started with Create React App
 
