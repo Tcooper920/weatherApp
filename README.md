@@ -1,3 +1,5 @@
+To view the full working project in your browser, click [here] (https://weatherapiapplication.netlify.app/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
